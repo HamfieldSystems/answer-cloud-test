@@ -283,6 +283,9 @@
   border-bottom: 1px solid var(--warning-border);
 }
 .needs li:last-child { border-bottom: 0; }
+.needs .needs-links { list-style: disc; margin: var(--space-2) 0 0; padding-left: var(--space-6); }
+.needs .needs-links li { display: list-item; padding-block: 2px; border-bottom: 0; }
+.needs .needs-links a { color: var(--text-primary); text-decoration: underline; text-underline-offset: 3px; }
 .needs .box {
   flex-shrink: 0;
   width: 16px;

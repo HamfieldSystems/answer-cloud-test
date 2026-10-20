@@ -90,6 +90,17 @@ const needs = [
   { item: "Dashboard screenshot", detail: "real data, not a mock, if it's to sit near the analytics claim" },
   { item: "Agent instructions", detail: "move to /build-site.md and check agents still find them from the homepage URL" },
   { item: "One tagline", detail: "retire “Websites for people and AI” and use “Build your own answer engine” everywhere" },
+  {
+    item: "MCP connector address",
+    detail: "five public pages tell people to connect their agent to https://answer.cloud/mcp, but that address redirects to www.answer.cloud/mcp, which returns a 404, so adding it as a connector fails. https://app.answer.cloud/mcp works and is what the agent guide uses. Pages to fix (checked 20 Oct 2026):",
+    links: [
+      { label: "Homepage agent instructions (“Keep building on the Free plan”)", href: "https://www.answer.cloud/" },
+      { label: "Docs: Use the MCP with an existing website", href: "https://www.answer.cloud/docs/mcp-existing-sites-hosted/" },
+      { label: "Docs: Use the MCP with a hosted website", href: "https://www.answer.cloud/docs/mcp-hosted-sites-hosted/" },
+      { label: "Docs: Plugins", href: "https://www.answer.cloud/docs/plugins-hosted/" },
+      { label: "Blog: Turn website chats and analytics into action with your AI agent", href: "https://www.answer.cloud/blog/analyze-website-chats-and-analytics-with-your-ai-agent/" },
+    ],
+  },
 ];
 ---
 
@@ -402,7 +413,17 @@ const needs = [
         </p>
         <ul class="needs">
           {needs.map((n) => (
-            <li><span class="box" aria-hidden="true"></span><span><strong>{n.item}:</strong> {n.detail}</span></li>
+            <li>
+              <span class="box" aria-hidden="true"></span>
+              <span>
+                <strong>{n.item}:</strong> {n.detail}
+                {n.links && (
+                  <ul class="needs-links">
+                    {n.links.map((l) => <li><a class="link-inline" href={l.href} rel="noopener">{l.label}</a></li>)}
+                  </ul>
+                )}
+              </span>
+            </li>
           ))}
         </ul>
       </div>
