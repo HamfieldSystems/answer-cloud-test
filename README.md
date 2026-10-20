@@ -2,7 +2,7 @@
 
 **Unofficial concept:** a repositioned one-page homepage for [answer.cloud](https://www.answer.cloud/), written by conversion copywriter Helen Peatfield for its founder. Not made by, endorsed by or affiliated with answer.cloud.
 
-The site is an Astro project in [`site/`](site/), built from answer.cloud's official template. It's a **local draft**: nothing has been reserved or published on answer.cloud.
+The site is an Astro project in [`site/`](site/), built from answer.cloud's official template. It's live at **https://helen-peatfield-answer-cloud-positioning-concept.answer.cloud** (published 20 Oct 2026).
 
 All features and prices come from answer.cloud's public homepage (checked 20 Oct 2026). There are no testimonials, stats or new claims.
 
@@ -15,6 +15,6 @@ npm run dev      # http://localhost:4331
 npm run build    # static output in site/dist/
 ```
 
-## Publishing later
+## Updating the live site
 
-answer.cloud publishes through its one-prompt build. When you're ready, ask your coding agent to publish this draft. It reserves a site with your email and brief, then rebuilds with `SITE_URL=https://{slug}.answer.cloud` so the social preview tags are absolute. After that it deploys and checks the live page and AI chat. See `site/CLAUDE.md` for details.
+The first launch used a temporary guest credential, which has been removed. To make changes, finish the answer.cloud account setup from the emailed link, connect your agent to `https://answer.cloud/mcp`, and ask it to update the existing site (don't create a new one). Build with `SITE_URL=https://helen-peatfield-answer-cloud-positioning-concept.answer.cloud` so the social preview tags stay absolute. See `site/CLAUDE.md`.

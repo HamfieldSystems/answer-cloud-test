@@ -1,15 +1,16 @@
 # answer.cloud site
 
 - Site kind: hosting
-- Slug: not reserved yet (local draft only)
-- Served at: https://{slug}.answer.cloud once reserved and deployed
+- Slug: helen-peatfield-answer-cloud-positioning-concept
+- Served at: https://helen-peatfield-answer-cloud-positioning-concept.answer.cloud
 - Organization: Helen Peatfield (answer.cloud positioning concept)
 - Source: Astro. Never hand-write plain HTML, llms.txt, sitemaps, analytics, or
   chat-widget scripts — the platform generates that layer at deploy time.
 - Deploy: through the answercloud MCP server only, under the user's actual request.
-  The user asked for a LOCAL DRAFT ONLY. No site has been reserved and nothing has
-  been deployed. Do not bootstrap, reserve or deploy until the user explicitly asks.
-- First launch verified: no.
+  The user asked to publish on 20 Oct 2026 via the guest first-site launch. Later
+  updates need the user's request and authenticated account access, not the expired
+  guest build credential.
+- First launch verified: yes (20 Oct 2026, deploy sequence 2). Guest build credential removed.
 
 ## What this project is
 
