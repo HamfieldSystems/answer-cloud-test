@@ -3,7 +3,7 @@ import "../styles/tokens.css";
 import "../styles/styleguide.css";
 import "../styles/site.css";
 import Icon from "../components/Icon.astro";
-import { AUTHOR, REAL_SITE, SITE_NAME } from "../consts";
+import { AUTHOR, LINKS, REAL_SITE, SITE_NAME, TAGLINE } from "../consts";
 
 interface Props {
   title: string;
@@ -17,13 +17,14 @@ const origin = Astro.site;
 const pageUrl = origin ? new URL(Astro.url.pathname, origin).href : undefined;
 const imageUrl = origin ? new URL("/assets/social-preview.png", origin).href : undefined;
 const imageAlt =
-  "Unofficial answer.cloud homepage concept by Helen Peatfield: Get found in AI answers. See how AI uses your site.";
+  "Unofficial answer.cloud homepage concept by Helen Peatfield: Be the answer, on your site and in AI tools.";
 
 const nav = [
-  { href: "#outcome", label: "What you get" },
-  { href: "#how", label: "How it works" },
-  { href: "#plans", label: "Plans" },
-  { href: "#faq", label: "FAQ" },
+  { href: "#how", label: "How it works", external: false },
+  { href: "#pricing", label: "Pricing", external: false },
+  { href: LINKS.docs, label: "Docs", external: true },
+  { href: LINKS.forAgents, label: "For agents", external: true },
+  { href: LINKS.logIn, label: "Log in", external: true },
 ];
 ---
 
@@ -81,12 +82,10 @@ const nav = [
           <span class="brand-name">answer.cloud</span>
           <span class="concept-tag">Concept</span>
         </a>
-        <nav class="site-links" aria-label="Sections">
-          {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+        <nav class="site-links" aria-label="Main">
+          {nav.map((n) => <a href={n.href} rel={n.external ? "noopener" : undefined}>{n.label}</a>)}
         </nav>
-        <a class="btn btn-primary btn-sm" href={REAL_SITE} rel="noopener">
-          Try it on answer.cloud <Icon name="arrow-up-right" size={14} />
-        </a>
+        <a class="btn btn-primary btn-sm" href="#start">Build a site</a>
       </div>
     </header>
 
@@ -95,12 +94,26 @@ const nav = [
     </main>
 
     <footer class="site-footer">
-      <div class="container site-footer-inner">
-        <p class="body-sm">
-          <strong>Unofficial concept</strong> by {AUTHOR}, conversion copywriter. Not made by, endorsed by
-          or affiliated with answer.cloud. Features and prices are taken from answer.cloud's public homepage.
-        </p>
-        <a class="link-arrow" href={REAL_SITE} rel="noopener">The real answer.cloud <Icon name="arrow-up-right" size={14} /></a>
+      <div class="container">
+        <div class="footer-top">
+          <p class="footer-tagline"><strong>answer.cloud</strong> — {TAGLINE}.</p>
+          <nav class="footer-links" aria-label="Footer">
+            <a href="#how">How it works</a>
+            <a href="#pricing">Pricing</a>
+            <a href={LINKS.docs} rel="noopener">Docs</a>
+            <a href={LINKS.blog} rel="noopener">Blog</a>
+            <a href={LINKS.forAgents} rel="noopener">For agents</a>
+            <a href={LINKS.bookCall} rel="noopener">Book a call</a>
+          </nav>
+        </div>
+        <div class="footer-note">
+          <p class="body-sm">
+            <strong>Unofficial concept</strong> by {AUTHOR}, conversion copywriter. Not made by, endorsed by
+            or affiliated with answer.cloud. Facts and prices are taken from answer.cloud's public pages;
+            amber notes mark what answer.cloud still needs to supply.
+          </p>
+          <a class="link-arrow" href={REAL_SITE} rel="noopener">The real answer.cloud <Icon name="arrow-up-right" size={14} /></a>
+        </div>
       </div>
     </footer>
   </body>

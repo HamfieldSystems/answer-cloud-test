@@ -18,12 +18,14 @@ conversion copywriter Helen Peatfield for answer.cloud's founder. It must stay c
 marked as unofficial and not affiliated, and link to the real https://www.answer.cloud/.
 
 Content rules:
-- Use only facts from answer.cloud's public homepage (checked 20 Oct 2026). No
-  testimonials, stats or new claims.
-- Lead with the outcome (found in AI answers, see how AI uses your site); the one-prompt
-  build from Claude Code or Codex is the "how".
-- Keep agent instructions off the page.
-- Visitor goal: visit answer.cloud and try the prompt.
+- Copy follows Helen Peatfield's "answer.cloud — Homepage Rewrite" doc (20 Oct 2026), in its
+  section order. Tagline everywhere: "Build your own answer engine".
+- Facts come only from answer.cloud's own public homepage, docs, blog and agent guide.
+  No testimonials, stats or new claims.
+- Anything answer.cloud hasn't published is shown with the `Gap` component as a visible
+  "Needs from answer.cloud" note — never invented or hidden. The "For Jared" section at the
+  end lists every gap.
+- Agent instructions stay off the page; "For agents" links to app.answer.cloud/build-site.md.
 
 Design constraints (from the official template, retokenized):
 - **Maximum font size anywhere is 32px** (28px on small screens).
@@ -35,7 +37,9 @@ Design constraints (from the official template, retokenized):
 Key files:
 - `src/pages/index.astro` — the page.
 - `src/layouts/Base.astro` — head/social metadata, concept bar, nav, footer.
-- `src/consts.ts` — prompt text, author, real-site link.
+- `src/consts.ts` — prompt, tagline, author and real answer.cloud links.
+- `src/components/Gap.astro` — visible "needs from answer.cloud" placeholder.
+- `src/components/PromptBox.astro` — prompt with copy button.
 - `src/styles/tokens.css` — design tokens. `src/styles/styleguide.css` — template components.
   `src/styles/site.css` — page-specific styles.
 - `public/assets/answercloud-chat.css` — chat widget theme (scoped to

@@ -1,0 +1,19 @@
+---
+import Icon from "./Icon.astro";
+import { PROMPT } from "../consts";
+
+interface Props {
+  label?: string;
+}
+const { label } = Astro.props;
+---
+
+<div class="prompt-box">
+  {label && <span class="label">{label}</span>}
+  <div class="prompt-row">
+    <code class="prompt-text">{PROMPT}</code>
+    <button type="button" class="btn btn-primary copy-btn" data-copy>
+      <Icon name="copy" size={16} /> <span>Copy prompt</span>
+    </button>
+  </div>
+</div>

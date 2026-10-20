@@ -1,0 +1,17 @@
+---
+// A visible placeholder for a fact answer.cloud still needs to supply.
+// Use `inline` inside a sentence or table cell; the default is a block note.
+interface Props {
+  inline?: boolean;
+}
+const { inline = false } = Astro.props;
+---
+
+{inline ? (
+  <span class="gap gap--inline"><span class="visually-hidden">Needs from answer.cloud: </span><slot /></span>
+) : (
+  <p class="gap gap--block">
+    <span class="gap-label">Needs from answer.cloud</span>
+    <span class="gap-text"><slot /></span>
+  </p>
+)}

@@ -1,147 +1,157 @@
 ---
 import Base from "../layouts/Base.astro";
 import Icon from "../components/Icon.astro";
-import { PROMPT, REAL_SITE } from "../consts";
+import Gap from "../components/Gap.astro";
+import PromptBox from "../components/PromptBox.astro";
+import { LINKS, TAGLINE } from "../consts";
 
-const outcomes = [
+const problems = [
   {
-    title: "Made for answer engines",
-    body: "Every site gets automatic answer-engine optimization, so AI can understand what you publish.",
+    title: "AI reads your markup, not your design.",
+    body: "Pages built in JavaScript can look fine to people and empty to answer engines.",
   },
   {
-    title: "See how agents use your site",
-    body: "See human visits, AI referrals and agent traffic in one dashboard, and which pages they find.",
+    title: "Script-based analytics can't see AI visitors.",
+    body: "Crawlers and agents don't run tracking scripts, so analytics that rely on them never record these visits.",
   },
   {
-    title: "A site that answers back",
-    body: "Visitors ask questions. Your site's AI chat answers from your published content, with links to the source.",
-  },
-  {
-    title: "Know what to write next",
-    body: "See what AI can find on your site, where a clearer answer would help, and what people are asking.",
+    title: "Your visitors' questions disappear.",
+    body: "They leave when they can't find an answer, and you never learn what they asked.",
   },
 ];
 
 const steps = [
-  { title: "Copy the prompt", body: "It's one line. You'll find it above, or on answer.cloud." },
   {
-    title: "Paste it into your agent",
-    body: "Use Claude Code or Codex. Your agent asks for your email, your organization's name and a short description.",
+    title: "Paste the prompt.",
+    body: "In Claude Code or Codex. Your agent asks for your email, your business name and what the site should do.",
   },
   {
-    title: "Get a live site",
-    body: "Your agent builds the site, publishes it at your answer.cloud address and turns on AI chat. Then it gives you the live link.",
+    title: "Your agent builds and publishes.",
+    body: "A fast static site, live on your own answer.cloud address. We add the answer layer and the chat on every deploy.",
+  },
+  {
+    title: "See what people and AI need, then improve.",
+    body: "Ask your agent to review the chats and traffic. It drafts the new FAQ, guide or page; you approve it before it goes live.",
   },
 ];
 
-const notNeeded = [
-  "An account or password. answer.cloud emails you a setup link.",
-  "A credit card",
-  "A repository",
-  "A domain",
-  "A plugin to install",
+const layers = [
+  {
+    name: "Answer layer",
+    what: "llms.txt, a Markdown copy of every page, sitemap, AI-crawler access and structured data, generated on every deploy",
+    why: "AI tools can read, quote and link to you",
+  },
+  {
+    name: "Site chat",
+    what: "Answers visitor questions from your published pages, with links to the source, styled to match your site",
+    why: "Visitors get answers instead of leaving",
+  },
+  {
+    name: "Human + AI analytics",
+    what: "Human visits, AI crawler activity, referrals from AI tools and chat activity, side by side",
+    why: "You see who's finding you, not just who clicked",
+  },
+  {
+    name: "Agent control",
+    what: "Your coding agent can deploy, roll back, publish content and analyse chats through our MCP server",
+    why: "You manage the site by asking, not clicking",
+  },
 ];
 
-const faq = [
+const alternatives = [
   {
-    q: "What is answer.cloud?",
-    a: "answer.cloud builds and hosts websites that people can use and AI can understand. Each site gets automatic answer-engine optimization, AI chat that answers from your published content, and analytics on visits from people and AI.",
+    option: "A standard host with an agent integration",
+    need: "An AEO setup, a chat tool and separate AI-traffic analytics",
+    us: "All four layers come with every site",
   },
   {
-    q: "How do I build a site on answer.cloud?",
-    a: `Copy the prompt "${PROMPT}" and paste it into Claude Code or Codex. Your agent builds the site and publishes it at your answer.cloud address.`,
+    option: "An AI website builder",
+    need: "To leave your coding agent and work in their editor",
+    us: "You stay in Claude Code or Codex",
   },
   {
-    q: "Do I need to sign up or add a card first?",
-    a: "No. Your first site needs no sign-up, no credit card and no repository. answer.cloud emails you a link to finish setting up your account.",
+    option: "An AEO or chat plugin",
+    need: "A CMS like WordPress to install it on",
+    us: "Hosting, chat and analytics included",
   },
   {
-    q: "What does the Free plan include?",
-    a: "AI chat answers from your first 10 pages, 10 CMS pages, and your first month of visitor and AI agent analytics, on a hosted answer.cloud address.",
+    option: "An AI-traffic analytics tool",
+    need: "Someone to act on the data",
+    us: "Your agent turns findings into drafts",
   },
-  {
-    q: "How much is Pro?",
-    a: "Pro is $20 a month per site, plus additional usage. It adds ongoing analytics, site search, CMS pages beyond 10, and a custom domain.",
-  },
-  {
-    q: "Is this page made by answer.cloud?",
-    a: "No. It's an unofficial homepage concept by conversion copywriter Helen Peatfield, made for answer.cloud's founder. The real site is www.answer.cloud.",
-  },
+];
+
+const needs = [
+  { item: "Proof", detail: "a live demo site, a site count, and at least one customer quote or before/after AI-referral result with dates" },
+  { item: "Detection", detail: "one plain line on how AI agents are told apart from people, and its known limits" },
+  { item: "Free plan limit", detail: "10 or 12 pages (the homepage and the agent guide disagree)" },
+  { item: "“No card” wording", detail: "true only for the one-prompt route; confirm how to phrase it for other sign-ups" },
+  { item: "Trust basics", detail: "an uptime target and a short privacy line (the companion's analytics receive visitor IP addresses)" },
+  { item: "Dashboard screenshot", detail: "real data, not a mock, if it's to sit near the analytics claim" },
+  { item: "Agent instructions", detail: "move to /build-site.md and check agents still find them from the homepage URL" },
+  { item: "One tagline", detail: "retire “Websites for people and AI” and use “Build your own answer engine” everywhere" },
 ];
 ---
 
 <Base
-  title="answer.cloud homepage concept (unofficial) · Helen Peatfield"
-  description="An unofficial homepage concept for answer.cloud by Helen Peatfield: get found in AI answers and see how AI uses your site. Not affiliated with answer.cloud."
+  title="Be the answer, on your site and in AI tools · answer.cloud concept (unofficial)"
+  description="An unofficial answer.cloud homepage concept by Helen Peatfield. One prompt in Claude Code or Codex builds a site AI tools can read, that answers your visitors and shows how people and AI find you."
 >
-  <!-- Hero: the outcome first, the prompt as the how -->
+  <!-- 2. Hero -->
   <section class="section is-open hero">
     <div class="container">
-      <span class="eyebrow">Unofficial homepage concept</span>
-      <h1 class="page-title hero-title">
-        Get found in AI answers.<br />
-        <span class="muted-ink">See how AI uses your site.</span>
-      </h1>
+      <span class="eyebrow">{TAGLINE}</span>
+      <h1 class="page-title hero-title">Be the answer, on your site and in AI tools.</h1>
       <p class="lede">
-        answer.cloud builds a website people can use and AI can understand. Then it shows you how
-        ChatGPT and other agents find your pages, and what people ask.
+        Paste one prompt into Claude Code or Codex. Your agent builds and publishes a site that AI tools
+        can read, answers your visitors' questions from your own pages, and shows you how people and AI
+        agents find you.
       </p>
-
-      <div class="prompt-box">
-        <span class="label">One prompt for Claude Code or Codex</span>
-        <div class="prompt-row">
-          <code class="prompt-text" id="prompt-hero">{PROMPT}</code>
-          <button type="button" class="btn btn-primary copy-btn" data-copy>
-            <Icon name="copy" size={16} /> <span>Copy prompt</span>
-          </button>
-        </div>
-      </div>
-
-      <ul class="zero" aria-label="What you don't need">
-        <li><Icon name="check" size={16} /> No sign-up</li>
-        <li><Icon name="check" size={16} /> No credit card</li>
-        <li><Icon name="check" size={16} /> No repo</li>
-      </ul>
-
-      <p class="mt-6">
-        <a class="link-arrow" href={REAL_SITE} rel="noopener">Visit answer.cloud and try the prompt <Icon name="arrow-up-right" size={14} /></a>
+      <PromptBox />
+      <p class="hero-under">
+        Free to start. No account, card, key or repo. Your agent sets it up, and we email you a link to
+        finish your account.
+      </p>
+      <p class="mt-4">
+        <a class="link-arrow" href="#companion">Already have a website? Add an AI companion <Icon name="arrow" size={14} /></a>
       </p>
     </div>
   </section>
 
-  <!-- Outcome -->
-  <section class="section" id="outcome">
+  <!-- 3. Proof strip -->
+  <section class="proof" aria-label="Proof">
+    <div class="container proof-inner">
+      <Gap inline>Live demo site link</Gap>
+      <Gap inline>Number of sites live</Gap>
+      <Gap inline>One customer logo or quote</Gap>
+      <Gap inline>One AI-referral result, with dates</Gap>
+    </div>
+  </section>
+
+  <!-- 4. The problem -->
+  <section class="section" id="problem">
     <div class="container">
-      <div class="section-head">
-        <span class="section-index">01</span>
-        <div>
-          <span class="eyebrow">What you get</span>
-          <h2 class="h1">Built to be a source AI can use</h2>
-        </div>
-      </div>
-      <p class="lede">Your site is made for answer engines from the start, and you can see what happens next.</p>
-      <div class="outcome-grid">
-        {outcomes.map((o) => (
-          <article class="outcome">
-            <h3 class="h4">{o.title}</h3>
-            <p>{o.body}</p>
+      <h2 class="h1 section-title">People are asking AI instead of searching. Most websites can't answer back.</h2>
+      <div class="problem-grid">
+        {problems.map((p) => (
+          <article class="problem">
+            <h3 class="h4">{p.title}</h3>
+            <p>{p.body}</p>
           </article>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- How -->
+  <!-- 5. How it works -->
   <section class="section alt" id="how">
     <div class="container">
       <div class="section-head">
-        <span class="section-index">02</span>
+        <span class="section-index">01</span>
         <div>
-          <span class="eyebrow">How it works</span>
-          <h2 class="h1">How do I build a site with one prompt?</h2>
+          <h2 class="h1">How it works</h2>
         </div>
       </div>
-      <p class="lede">There's nothing to set up first. Your coding agent does the building.</p>
       <ol class="feature-grid steps">
         {steps.map((s, i) => (
           <li class="feature-module">
@@ -151,122 +161,256 @@ const faq = [
           </li>
         ))}
       </ol>
-      <div class="panel not-needed mt-8">
-        <h3 class="h4">What you don't need for your first site</h3>
-        <ul>
-          {notNeeded.map((n) => <li><Icon name="x" size={14} /> {n}</li>)}
+    </div>
+  </section>
+
+  <!-- 6. What every site gets -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-index">02</span>
+        <div>
+          <h2 class="h1">What every site gets</h2>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table class="data-table layers-table">
+          <thead>
+            <tr><th scope="col"><span class="visually-hidden">Layer</span></th><th scope="col">What you get</th><th scope="col">Why it matters</th></tr>
+          </thead>
+          <tbody>
+            {layers.map((l) => (
+              <tr><th scope="row">{l.name}</th><td>{l.what}</td><td>{l.why}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. The loop -->
+  <section class="section alt" id="loop">
+    <div class="container loop">
+      <div class="section-head">
+        <span class="section-index">03</span>
+        <div>
+          <span class="eyebrow">The loop</span>
+          <h2 class="h1">Your visitors tell you what to write next.</h2>
+        </div>
+      </div>
+      <div class="reading">
+        <p class="body-lg">
+          Every question asked in your site chat is a signal. Combine it with which pages AI agents read and
+          which AI tools send you visitors, and you know exactly what's missing. Then ask your agent to fix it:
+        </p>
+        <blockquote class="agent-ask">
+          <span class="label">Ask your agent</span>
+          <p>Review chats from the last 30 days. Group the recurring questions and draft three improvements for me to approve.</p>
+        </blockquote>
+        <p class="loop-close">
+          Hosting platforms host. Analytics tools measure. AI builders build. answer.cloud does all three, and
+          hands the results to the agent that edits your site.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Why not just use… -->
+  <section class="section" id="compare">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-index">04</span>
+        <div>
+          <h2 class="h1">Why not just use…</h2>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table class="data-table compare-table">
+          <thead>
+            <tr><th scope="col">If you're considering</th><th scope="col">You'd still need</th><th scope="col">With answer.cloud</th></tr>
+          </thead>
+          <tbody>
+            {alternatives.map((a) => (
+              <tr><th scope="row">{a.option}</th><td>{a.need}</td><td>{a.us}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Two ways to start -->
+  <section class="section alt" id="start">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-index">05</span>
+        <div>
+          <h2 class="h1">Two ways to start</h2>
+        </div>
+      </div>
+      <div class="doors">
+        <article class="door">
+          <h3 class="h3">Building something new?</h3>
+          <p>Paste the prompt and your agent does the rest. Free, on your own answer.cloud address.</p>
+          <PromptBox />
+        </article>
+        <article class="door" id="companion">
+          <h3 class="h3">Happy with your current site?</h3>
+          <p>
+            Keep it. Add an AI companion at ai.yourdomain.com with its own content, chat, search and analytics.
+            Your hosting, DNS and deploys stay as they are.
+          </p>
+          <p class="price">$100<span>/month</span></p>
+          <p><a class="btn btn-outline" href={LINKS.bookCall} rel="noopener">Talk to us <Icon name="arrow-up-right" size={14} /></a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. What we measure, honestly -->
+  <section class="section" id="measure">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-index">06</span>
+        <div>
+          <h2 class="h1">What we measure, honestly</h2>
+        </div>
+      </div>
+      <div class="reading">
+        <p class="lede">AI analytics is new, and easy to oversell. So here's what our numbers mean:</p>
+        <dl class="measures">
+          <dt>A crawler visit</dt>
+          <dd>means an AI system fetched your page. It doesn't prove you were cited.</dd>
+          <dt>An AI referral</dt>
+          <dd>means a person clicked through from an AI tool to your site.</dd>
+          <dt>Chat questions</dt>
+          <dd>are what your visitors actually asked, in their words.</dd>
+        </dl>
+        <Gap>One line on how agents are detected, and known limits.</Gap>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Pricing -->
+  <section class="section alt" id="pricing">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-index">07</span>
+        <div>
+          <h2 class="h1">Pricing</h2>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table class="data-table pricing-table">
+          <thead>
+            <tr><th scope="col">Plan</th><th scope="col">Price</th><th scope="col">For</th><th scope="col">Includes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Free</th>
+              <td class="nowrap">$0</td>
+              <td>Trying it out</td>
+              <td>Your answer.cloud address, answer layer, chat on your first <Gap inline>10</Gap> pages, 10 CMS pages, first month of analytics. No card.</td>
+            </tr>
+            <tr>
+              <th scope="row">Pro</th>
+              <td>$20/month per site, includes $20 of usage</td>
+              <td>Sites that are live for real</td>
+              <td>Your own domain with HTTPS, chat and CMS beyond 10 pages (usage-based), site search, ongoing analytics, GitHub deploys, spending limits</td>
+            </tr>
+            <tr>
+              <th scope="row">AI companion</th>
+              <td class="nowrap">$100/month</td>
+              <td>Businesses with an existing site</td>
+              <td>Companion site at ai.yourdomain.com with content, chat, search and analytics</td>
+            </tr>
+            <tr>
+              <th scope="row">Enterprise</th>
+              <td>Custom</td>
+              <td>Multiple sites or brands</td>
+              <td>Custom capacity, onboarding, integrations, priority support</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. Questions -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-index">08</span>
+        <div>
+          <h2 class="h1">Questions</h2>
+        </div>
+      </div>
+      <div class="faq reading">
+        <div class="faq-item">
+          <h3 class="h4">Do I need to know how to code?</h3>
+          <p>No, but you do need Claude Code or Codex. Your agent writes and publishes the code; you describe what you want.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="h4">Do I need an account first?</h3>
+          <p>No. Your agent creates the site, and we email you a link to finish setting up your account.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="h4">What does it build with?</h3>
+          <p>Astro, a fast static site framework. Your source code stays in your folder, so it's yours.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="h4">Can I use my own domain?</h3>
+          <p>Yes, on Pro.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="h4">Will AI tools definitely cite me?</h3>
+          <p>No one can promise that. We make your site easy for AI to read and show you what's happening, so you can improve it.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="h4">How do you tell AI agents from people?</h3>
+          <Gap>Answer needed.</Gap>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. Final call to action -->
+  <section class="section is-open alt">
+    <div class="container cta">
+      <h2 class="h1">Your next website should answer back.</h2>
+      <PromptBox />
+      <p class="hero-under">
+        Free to start. No card. Prefer to talk it through?
+        <a class="link-inline" href={LINKS.bookCall} rel="noopener">Book a call</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- For the founder: what the page still needs -->
+  <section class="section founder" id="needs">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-index">For Jared</span>
+        <div>
+          <span class="eyebrow">Not part of the homepage</span>
+          <h2 class="h1">What answer.cloud needs to supply</h2>
+        </div>
+      </div>
+      <div class="reading">
+        <p class="lede">
+          The amber notes above mark facts only answer.cloud can provide. The page can't ship until they're
+          filled; proof is the one that matters most.
+        </p>
+        <ul class="needs">
+          {needs.map((n) => (
+            <li><span class="box" aria-hidden="true"></span><span><strong>{n.item}:</strong> {n.detail}</span></li>
+          ))}
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Plans -->
-  <section class="section" id="plans">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-index">03</span>
-        <div>
-          <span class="eyebrow">Plans</span>
-          <h2 class="h1">Start free</h2>
-        </div>
-      </div>
-      <p class="lede">Upgrade to Pro when you need more room.</p>
-      <div class="plans">
-        <article class="plan">
-          <h3 class="h3">Free</h3>
-          <p class="price">$0<span>/month</span></p>
-          <ul>
-            <li><Icon name="check" size={16} /> AI chat answers from your first 10 pages</li>
-            <li><Icon name="check" size={16} /> 10 CMS pages</li>
-            <li><Icon name="check" size={16} /> Your first month of visitor and AI agent analytics</li>
-            <li><Icon name="check" size={16} /> A hosted answer.cloud address</li>
-            <li><Icon name="check" size={16} /> No credit card required</li>
-          </ul>
-        </article>
-        <article class="plan">
-          <h3 class="h3">Pro</h3>
-          <p class="price">$20<span>/month per site</span></p>
-          <p class="caption">plus additional usage</p>
-          <ul>
-            <li><Icon name="check" size={16} /> Everything in Free</li>
-            <li><Icon name="check" size={16} /> Ongoing visitor and AI agent analytics</li>
-            <li><Icon name="check" size={16} /> Site search, and chat beyond 10 pages</li>
-            <li><Icon name="check" size={16} /> More than 10 CMS pages</li>
-            <li><Icon name="check" size={16} /> A custom domain</li>
-          </ul>
-        </article>
-      </div>
-      <p class="body-sm muted mt-6">
-        Full plan details, including Enterprise, are on
-        <a class="link-inline" href={REAL_SITE} rel="noopener">answer.cloud</a>.
-      </p>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section alt" id="faq">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-index">04</span>
-        <div>
-          <span class="eyebrow">FAQ</span>
-          <h2 class="h1">Questions people ask</h2>
-        </div>
-      </div>
-      <div class="faq reading">
-        {faq.map((f) => (
-          <div class="faq-item">
-            <h3 class="h4">{f.q}</h3>
-            <p>{f.a}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section class="section is-open">
-    <div class="container cta">
-      <h2 class="h1">Try the prompt</h2>
-      <p class="lede">Copy it and paste it into Claude Code or Codex. Your site is live at the end.</p>
-      <div class="prompt-box">
-        <div class="prompt-row">
-          <code class="prompt-text">{PROMPT}</code>
-          <button type="button" class="btn btn-primary copy-btn" data-copy>
-            <Icon name="copy" size={16} /> <span>Copy prompt</span>
-          </button>
-        </div>
-      </div>
-      <p class="mt-6">
-        <a class="btn btn-outline" href={REAL_SITE} rel="noopener">Visit answer.cloud <Icon name="arrow-up-right" size={14} /></a>
-      </p>
-    </div>
-  </section>
-
-  <!-- Notes for the founder -->
-  <section class="section alt" id="notes">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-index">05</span>
-        <div>
-          <span class="eyebrow">For the founder</span>
-          <h2 class="h1">What this concept changes</h2>
-        </div>
-      </div>
-      <dl class="notes reading">
-        <dt>Outcome first</dt>
-        <dd>The page opens with what people want: being found in AI answers, and seeing how AI uses their site. The tools come later.</dd>
-        <dt>The prompt is the "how"</dt>
-        <dd>The one-prompt build is how you get the outcome, not the headline. The page makes clear there's nothing to set up: no sign-up, no card, no repo.</dd>
-        <dt>Agent instructions off the human page</dt>
-        <dd>Today the full agent instructions sit on the homepage. In this concept they move to a page only for agents, so people see the pitch and agents still get the steps.</dd>
-        <dt>Only real facts</dt>
-        <dd>Every feature and price here comes from answer.cloud's public homepage. There are no testimonials, stats or new claims.</dd>
-      </dl>
-    </div>
-  </section>
-
-  <p class="copy-status visually-hidden" role="status" aria-live="polite" id="copy-status"></p>
+  <p class="visually-hidden" role="status" aria-live="polite" id="copy-status"></p>
 
   <script>
     // Copy buttons. The prompt is also plain text in the markup, so the page
