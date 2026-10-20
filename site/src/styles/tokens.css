@@ -5,9 +5,11 @@
    ========================================================================= */
 
 :root {
+  /* Neutral fallback palette: this concept is unofficial, so it avoids
+     answer.cloud's brand blue. */
   /* ---- Core palette -------------------------------------------------- */
-  --color-accent: #2e7bff;
-  --color-accent-deep: #0058ef;
+  --color-accent: #1a1b1c;
+  --color-accent-deep: #1a1b1c;
   --color-ink: #1a1b1c;
   --color-muted: #667085;
   --color-cream: #f6f5f4;
@@ -37,15 +39,15 @@
 
   /* ---- Interactive states ------------------------------------------- */
   --interactive: var(--color-accent-deep);
-  --interactive-hover: #0049c4;
-  --interactive-active: #003a9e;
-  --interactive-subtle: rgba(46, 123, 255, 0.08);
-  --interactive-subtle-hover: rgba(46, 123, 255, 0.14);
-  --selected-bg: rgba(46, 123, 255, 0.10);
+  --interactive-hover: #383838;
+  --interactive-active: #000000;
+  --interactive-subtle: rgba(26, 27, 28, 0.05);
+  --interactive-subtle-hover: rgba(26, 27, 28, 0.09);
+  --selected-bg: rgba(26, 27, 28, 0.06);
   --selected-border: var(--color-accent);
 
   /* ---- Focus --------------------------------------------------------- */
-  --focus-ring: rgba(46, 123, 255, 0.45);
+  --focus-ring: rgba(26, 27, 28, 0.35);
   --focus-ring-width: 3px;
   --focus-outline: var(--color-accent);
 
@@ -65,8 +67,8 @@
   --error-bg: #fbeceb;
   --error-border: rgba(192, 54, 44, 0.30);
   --info: var(--color-accent-deep);
-  --info-bg: rgba(46, 123, 255, 0.08);
-  --info-border: rgba(46, 123, 255, 0.30);
+  --info-bg: rgba(26, 27, 28, 0.05);
+  --info-border: rgba(26, 27, 28, 0.24);
 
   /* ---- Typography ---------------------------------------------------- */
   --font-sans: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",

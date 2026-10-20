@@ -215,7 +215,7 @@ a {
 /* ---- Links: variants ------------------------------------------------- */
 .link-inline {
   color: var(--text-accent);
-  border-bottom: 1px solid rgba(46, 123, 255, 0.35);
+  border-bottom: 1px solid rgba(26, 27, 28, 0.35);
   transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease);
 }
 .link-inline:hover {
@@ -1074,7 +1074,7 @@ kbd,
 .bg-atmosphere {
   background:
     radial-gradient(ellipse 200% 100% at 50% 50%, #ffffff 0%, rgba(255, 255, 255, 0) 80%),
-    linear-gradient(180deg, #0058ef 0%, rgba(255, 255, 255, 0.8) 60%);
+    linear-gradient(180deg, #1a1b1c 0%, rgba(255, 255, 255, 0.8) 60%);
 }
 .bg-grid {
   background-image:
@@ -1097,9 +1097,9 @@ kbd,
   mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 40%, transparent 100%);
   pointer-events: none;
 }
-.gradient-accent { background: linear-gradient(135deg, #2e7bff 0%, #0058ef 100%); }
+.gradient-accent { background: linear-gradient(135deg, #383838 0%, #1a1b1c 100%); }
 .gradient-accent-fade {
-  background: linear-gradient(180deg, rgba(46, 123, 255, 0.16) 0%, rgba(46, 123, 255, 0) 100%);
+  background: linear-gradient(180deg, rgba(26, 27, 28, 0.16) 0%, rgba(26, 27, 28, 0) 100%);
 }
 .gradient-soft-surface { background: linear-gradient(180deg, #ffffff 0%, #f6f5f4 100%); }
 .gradient-section-transition {
@@ -1179,7 +1179,7 @@ kbd,
 }
 .col-demo .cell {
   background: var(--interactive-subtle);
-  border: 1px solid rgba(46, 123, 255, 0.25);
+  border: 1px solid rgba(26, 27, 28, 0.25);
   text-align: center;
   padding: var(--space-3) 0;
   font-family: var(--font-mono);
@@ -1484,7 +1484,7 @@ kbd,
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(46, 123, 255, 0.28);
+  background: rgba(26, 27, 28, 0.28);
   mix-blend-mode: multiply;
   pointer-events: none;
 }
@@ -1758,7 +1758,7 @@ summary:focus-visible,
   height: 6px;
   border-radius: 50%;
   background: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(46, 123, 255, 0.28);
+  box-shadow: 0 0 0 3px rgba(26, 27, 28, 0.28);
 }
 /* image extends slightly beyond its content column for a stronger moment */
 .media--bleed { margin-inline: calc(-1 * var(--space-8)); }
@@ -1841,7 +1841,7 @@ summary:focus-visible,
   width: 24px;
   height: 24px;
   border-radius: var(--radius-sm);
-  background: linear-gradient(135deg, #2e7bff 0%, #0058ef 100%);
+  background: linear-gradient(135deg, #383838 0%, #1a1b1c 100%);
   flex: none;
 }
 .chat-head .chat-id { display: flex; flex-direction: column; gap: 1px; line-height: 1.2; }
@@ -1886,7 +1886,7 @@ summary:focus-visible,
 .chat-msg--user {
   align-self: flex-end;
   background: var(--selected-bg);
-  border: 1px solid rgba(46, 123, 255, 0.20);
+  border: 1px solid rgba(26, 27, 28, 0.20);
   color: var(--text-primary);
   padding: var(--space-2) var(--space-3);
   border-radius: 10px 10px 2px 10px;
@@ -1903,7 +1903,7 @@ summary:focus-visible,
 .chat-msg--assistant p + p { margin-top: var(--space-2); }
 .chat-msg--assistant a {
   color: var(--text-accent);
-  border-bottom: 1px solid rgba(46, 123, 255, 0.35);
+  border-bottom: 1px solid rgba(26, 27, 28, 0.35);
 }
 
 /* Citations / references under an answer */
@@ -1924,7 +1924,7 @@ summary:focus-visible,
   font-size: var(--fs-caption);
   color: var(--text-accent);
   background: var(--interactive-subtle);
-  border: 1px solid rgba(46, 123, 255, 0.20);
+  border: 1px solid rgba(26, 27, 28, 0.20);
   border-radius: var(--radius-pill);
 }
 .chat-ref .n {
@@ -2046,7 +2046,7 @@ summary:focus-visible,
   border-radius: var(--radius);
   padding: var(--space-8);
   background:
-    radial-gradient(ellipse 120% 90% at 80% 10%, rgba(46, 123, 255, 0.08), transparent 60%),
+    radial-gradient(ellipse 120% 90% at 80% 10%, rgba(26, 27, 28, 0.08), transparent 60%),
     linear-gradient(180deg, #ffffff 0%, var(--color-cream) 100%);
   display: flex;
   justify-content: center;
