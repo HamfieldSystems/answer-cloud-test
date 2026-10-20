@@ -17,4 +17,4 @@ npm run build    # static output in site/dist/
 
 ## Updating the live site
 
-The first launch used a temporary guest credential, which has been removed. To make changes, finish the answer.cloud account setup from the emailed link, connect your agent to `https://answer.cloud/mcp`, and ask it to update the existing site (don't create a new one). Build with `SITE_URL=https://helen-peatfield-answer-cloud-positioning-concept.answer.cloud` so the social preview tags stay absolute. See `site/CLAUDE.md`.
+The first launch used a temporary guest credential, which has been removed. To make changes, finish the answer.cloud account setup from the emailed link, connect your agent to `https://app.answer.cloud/mcp` (the `answer.cloud/mcp` address in their docs redirects to a 404 and fails the connector check), and ask it to update the existing site (don't create a new one). Build with `SITE_URL=https://helen-peatfield-answer-cloud-positioning-concept.answer.cloud` so the social preview tags stay absolute. See `site/CLAUDE.md`.
