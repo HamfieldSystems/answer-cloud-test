@@ -86,7 +86,7 @@
 
 /* ---- Hero ------------------------------------------------------------ */
 .hero .eyebrow { margin-bottom: var(--rhythm-label-heading); }
-.hero-title { max-width: 22ch; margin-bottom: var(--rhythm-heading-body); }
+.hero-title { max-width: 26ch; margin-bottom: var(--rhythm-heading-body); }
 .muted-ink { color: var(--text-muted); }
 
 .prompt-box {
