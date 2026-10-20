@@ -1,11 +1,15 @@
 # answer-cloud-test
 
-Landing page for **answer.cloud** — a static site (no build step).
+**Unofficial concept:** a repositioned one-page homepage for [answer.cloud](https://www.answer.cloud/), written by conversion copywriter Helen Peatfield for its founder. Not made by, endorsed by or affiliated with answer.cloud.
 
-- `index.html` — page markup
-- `styles.css` — styles (dark theme, responsive)
-- `script.js` — demo Q&A box, waitlist form, mobile menu
-- `favicon.svg` — logo mark
+It's a static site with no build step:
+
+- `index.html`: page copy and structure
+- `styles.css`: styles (dark theme, responsive)
+- `script.js`: copy-prompt buttons
+- `favicon.svg`: neutral icon (deliberately not answer.cloud's logo)
+
+All features and prices come from answer.cloud's live homepage (checked 20 Oct 2026). There are no testimonials, stats or new claims.
 
 ## Run locally
 
@@ -13,9 +17,3 @@ Landing page for **answer.cloud** — a static site (no build step).
 python3 -m http.server 8000
 # open http://localhost:8000
 ```
-
-## Deploy
-
-Upload the files to any static host (GitHub Pages, Netlify, Cloudflare Pages, Vercel) and point the `answer.cloud` DNS at it.
-
-Note: the hero Q&A box uses canned demo answers, and the waitlist form doesn't send data anywhere yet.

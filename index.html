@@ -3,10 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>answer.cloud — Every answer, one question away</title>
-  <meta name="description" content="answer.cloud turns your docs, tickets and know-how into instant, cited answers for your team and your customers.">
-  <meta property="og:title" content="answer.cloud">
-  <meta property="og:description" content="Every answer, one question away.">
+  <title>answer.cloud homepage concept (unofficial) · Helen Peatfield</title>
+  <meta name="description" content="An unofficial positioning concept for the answer.cloud homepage by conversion copywriter Helen Peatfield. Not affiliated with answer.cloud.">
+  <meta name="robots" content="noindex">
   <meta name="theme-color" content="#0b1020">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,227 +14,187 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="concept-bar" role="note">
+    <div class="container">
+      <strong>Unofficial concept.</strong> A homepage rewrite by Helen Peatfield. Not made by or affiliated with answer.cloud.
+      <a href="https://www.answer.cloud/" rel="noopener">See the real answer.cloud ↗</a>
+    </div>
+  </div>
+
   <header class="nav">
     <div class="container nav-inner">
-      <a href="#" class="logo" aria-label="answer.cloud home">
-        <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><use href="#mark"/></svg>
-        <span>answer<span class="dot">.cloud</span></span>
-      </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#features">Features</a>
+      <span class="wordmark">answer.cloud <span class="tag">concept</span></span>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#outcome">What you get</a>
         <a href="#how">How it works</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
+        <a href="#plans">Plans</a>
+        <a href="#notes">Concept notes</a>
       </nav>
-      <a href="#signup" class="btn btn-small">Get early access</a>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span>
-      </button>
+      <a href="https://www.answer.cloud/" class="btn btn-small" rel="noopener">Try it on answer.cloud ↗</a>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
+    <!-- Hero: the outcome first -->
     <section class="hero">
       <div class="glow" aria-hidden="true"></div>
       <div class="container hero-inner">
-        <p class="eyebrow">Now in private beta</p>
-        <h1>Every answer,<br><span class="grad">one question away.</span></h1>
-        <p class="lede">answer.cloud turns your docs, tickets and tribal knowledge into instant, cited answers — for your team and your customers.</p>
+        <h1>Get found in AI answers.<br><span class="grad">See how AI uses your site.</span></h1>
+        <p class="lede">answer.cloud builds a website people can use and AI can understand. Then it shows you how ChatGPT and other agents find your pages and what they ask.</p>
 
-        <form class="ask" id="ask" autocomplete="off">
-          <svg class="ask-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <input id="ask-input" type="text" placeholder="Ask anything… e.g. How do I reset my password?" aria-label="Ask a question">
-          <button type="submit" class="btn">Ask</button>
-        </form>
-        <div class="chips" aria-label="Example questions">
-          <button type="button" class="chip">How do I reset my password?</button>
-          <button type="button" class="chip">What's our refund policy?</button>
-          <button type="button" class="chip">Which plan includes SSO?</button>
-        </div>
-
-        <div class="answer-card" id="answer" hidden aria-live="polite">
-          <div class="answer-head">
-            <svg width="18" height="18" viewBox="0 0 32 32" aria-hidden="true"><use href="#mark"/></svg>
-            <span>answer.cloud</span>
-            <span class="badge">demo</span>
+        <div class="prompt" id="prompt-hero">
+          <div class="prompt-label">One prompt. Paste it into Claude Code or Codex.</div>
+          <div class="prompt-row">
+            <code class="prompt-text">Build me a website on https://www.answer.cloud</code>
+            <button type="button" class="btn copy" data-copy>Copy prompt</button>
           </div>
-          <p class="answer-text" id="answer-text"></p>
-          <div class="sources" id="answer-sources"></div>
         </div>
+        <ul class="zero">
+          <li>No sign-up</li>
+          <li>No credit card</li>
+          <li>No repo</li>
+        </ul>
+        <p class="hero-cta"><a href="https://www.answer.cloud/" rel="noopener">Or see the prompt on answer.cloud ↗</a></p>
       </div>
     </section>
 
-    <!-- Features -->
-    <section id="features" class="section">
+    <!-- Outcome -->
+    <section id="outcome" class="section">
       <div class="container">
-        <h2 class="section-title">Built to answer, not just search</h2>
-        <p class="section-sub">Stop sending people links. Give them the answer — with the receipts.</p>
-        <div class="grid grid-3">
+        <h2 class="section-title">Built to be a source AI can use</h2>
+        <p class="section-sub">Your site is made for answer engines from the start, and you can see what happens next.</p>
+        <div class="grid grid-2">
           <article class="card">
-            <div class="icon">⚡</div>
-            <h3>Instant answers</h3>
-            <p>Natural-language questions get direct, readable answers in under a second — not ten blue links.</p>
+            <h3>Made for answer engines</h3>
+            <p>Every site gets automatic answer-engine optimization, so AI can understand what you publish.</p>
           </article>
           <article class="card">
-            <div class="icon">🔗</div>
-            <h3>Always cited</h3>
-            <p>Every answer links back to the exact source passage, so people can trust it and verify it.</p>
+            <h3>See how agents use your site</h3>
+            <p>See human visits, AI referrals and agent traffic in one dashboard. You can also see which pages they find.</p>
           </article>
           <article class="card">
-            <div class="icon">🔌</div>
-            <h3>Connects everywhere</h3>
-            <p>Sync from your docs, help center, wikis and drives. Answers stay fresh as your content changes.</p>
+            <h3>A site that answers back</h3>
+            <p>Visitors ask questions. Your site's AI chat answers from your published content and links to the source.</p>
           </article>
           <article class="card">
-            <div class="icon">🔒</div>
-            <h3>Private by default</h3>
-            <p>Permission-aware answers: people only ever see what they're already allowed to see.</p>
-          </article>
-          <article class="card">
-            <div class="icon">💬</div>
-            <h3>Embed in a line</h3>
-            <p>Drop a widget on your site, add it to your app, or call the API. One snippet, anywhere.</p>
-          </article>
-          <article class="card">
-            <div class="icon">📈</div>
-            <h3>Learn what's missing</h3>
-            <p>See the questions people ask that your content can't answer yet — and fill the gaps.</p>
+            <h3>Know what to write next</h3>
+            <p>See what AI can find, where a clearer answer would help, and what people are asking.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- How it works -->
+    <!-- How -->
     <section id="how" class="section section-alt">
       <div class="container">
-        <h2 class="section-title">Live in three steps</h2>
+        <h2 class="section-title">One prompt is all it takes</h2>
+        <p class="section-sub">There's nothing to set up first. Your coding agent does the building.</p>
         <ol class="steps">
           <li>
             <span class="step-num">1</span>
-            <h3>Connect</h3>
-            <p>Point answer.cloud at your knowledge sources. We index them securely in minutes.</p>
+            <h3>Copy the prompt</h3>
+            <p>One line: <code>Build me a website on https://www.answer.cloud</code></p>
           </li>
           <li>
             <span class="step-num">2</span>
-            <h3>Ask</h3>
-            <p>Your team and customers ask questions in plain language, wherever they work.</p>
+            <h3>Paste it into your agent</h3>
+            <p>Use Claude Code or Codex. Your agent asks for your email, your organization's name and a short description.</p>
           </li>
           <li>
             <span class="step-num">3</span>
-            <h3>Answer</h3>
-            <p>They get a clear, cited answer instantly. You get insights into what people need.</p>
+            <h3>Get a live site</h3>
+            <p>Your agent builds the site, publishes it at your answer.cloud address and turns on AI chat. Then it gives you the live link.</p>
           </li>
         </ol>
-        <pre class="code" aria-label="Embed snippet"><code>&lt;script src="https://answer.cloud/widget.js"
-        data-workspace="your-team"&gt;&lt;/script&gt;</code></pre>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing" class="section">
-      <div class="container">
-        <h2 class="section-title">Simple pricing</h2>
-        <p class="section-sub">Start free. Upgrade when your questions do.</p>
-        <div class="grid grid-3 pricing">
-          <article class="card price">
-            <h3>Starter</h3>
-            <p class="amount">$0<span>/mo</span></p>
-            <ul>
-              <li>1 knowledge source</li>
-              <li>500 answers / month</li>
-              <li>Website widget</li>
-            </ul>
-            <a href="#signup" class="btn btn-ghost">Start free</a>
-          </article>
-          <article class="card price featured">
-            <span class="ribbon">Most popular</span>
-            <h3>Team</h3>
-            <p class="amount">$49<span>/mo</span></p>
-            <ul>
-              <li>Unlimited sources</li>
-              <li>10,000 answers / month</li>
-              <li>Analytics &amp; gap reports</li>
-              <li>API access</li>
-            </ul>
-            <a href="#signup" class="btn">Get early access</a>
-          </article>
-          <article class="card price">
-            <h3>Enterprise</h3>
-            <p class="amount">Custom</p>
-            <ul>
-              <li>SSO &amp; permissions sync</li>
-              <li>Unlimited answers</li>
-              <li>Dedicated support</li>
-            </ul>
-            <a href="#signup" class="btn btn-ghost">Contact us</a>
-          </article>
+        <div class="skip">
+          <h3>What you don't need for your first site</h3>
+          <ul>
+            <li>An account or password: answer.cloud emails you a setup link</li>
+            <li>A credit card</li>
+            <li>A repository</li>
+            <li>A domain</li>
+            <li>A plugin to install</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="section section-alt">
-      <div class="container narrow">
-        <h2 class="section-title">Questions? Answered.</h2>
-        <details>
-          <summary>What can answer.cloud learn from?</summary>
-          <p>Help centers, documentation sites, wikis, shared drives, PDFs and past support tickets. If it's text your team relies on, it can become an answer.</p>
-        </details>
-        <details>
-          <summary>Is my data used to train public models?</summary>
-          <p>No. Your content is only used to answer questions in your own workspace.</p>
-        </details>
-        <details>
-          <summary>What happens when it doesn't know?</summary>
-          <p>It says so — and logs the question so you can see exactly where your content has gaps.</p>
-        </details>
-        <details>
-          <summary>How long does setup take?</summary>
-          <p>Most teams connect their first source and get answers in under ten minutes.</p>
-        </details>
+    <!-- Plans -->
+    <section id="plans" class="section">
+      <div class="container">
+        <h2 class="section-title">Start free</h2>
+        <p class="section-sub">Upgrade to Pro when you need more room.</p>
+        <div class="grid grid-2 plans">
+          <article class="card price">
+            <h3>Free</h3>
+            <p class="amount">$0<span>/month</span></p>
+            <ul>
+              <li>AI chat answers from your first 10 pages</li>
+              <li>10 CMS pages</li>
+              <li>Your first month of visitor and AI agent analytics</li>
+              <li>A hosted answer.cloud address</li>
+              <li>No credit card required</li>
+            </ul>
+          </article>
+          <article class="card price">
+            <h3>Pro</h3>
+            <p class="amount">$20<span>/month per site</span></p>
+            <p class="price-note">plus additional usage</p>
+            <ul>
+              <li>Everything in Free</li>
+              <li>Ongoing visitor and AI agent analytics</li>
+              <li>Site search, and chat beyond 10 pages</li>
+              <li>More than 10 CMS pages</li>
+              <li>A custom domain</li>
+            </ul>
+          </article>
+        </div>
+        <p class="plans-foot">Full plan details, including Enterprise, are <a href="https://www.answer.cloud/" rel="noopener">on answer.cloud ↗</a></p>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section id="signup" class="section cta">
+    <!-- Final CTA -->
+    <section class="section cta">
       <div class="container narrow center">
-        <h2 class="section-title">Get your answers in the cloud</h2>
-        <p class="section-sub">Join the beta waitlist. We'll be in touch soon.</p>
-        <form class="signup" id="signup-form">
-          <input type="email" required placeholder="you@company.com" aria-label="Email address">
-          <button type="submit" class="btn">Join waitlist</button>
-        </form>
-        <p class="signup-msg" id="signup-msg" hidden>Thanks! You're on the list. ☁️</p>
+        <h2 class="section-title">Try the prompt</h2>
+        <p class="section-sub">Copy it and paste it into Claude Code or Codex. Your site is live at the end.</p>
+        <div class="prompt">
+          <div class="prompt-row">
+            <code class="prompt-text">Build me a website on https://www.answer.cloud</code>
+            <button type="button" class="btn copy" data-copy>Copy prompt</button>
+          </div>
+        </div>
+        <p class="hero-cta"><a href="https://www.answer.cloud/" class="btn btn-ghost" rel="noopener">Visit answer.cloud ↗</a></p>
+      </div>
+    </section>
+
+    <!-- Notes for the founder -->
+    <section id="notes" class="section section-alt">
+      <div class="container narrow">
+        <h2 class="section-title">Concept notes</h2>
+        <p class="section-sub">What this rewrite changes, and why.</p>
+        <dl class="notes">
+          <dt>Outcome first</dt>
+          <dd>The page now opens with what people want: being found in AI answers, and seeing how AI uses their site. The tools come later.</dd>
+          <dt>The prompt is the "how"</dt>
+          <dd>The one-prompt build is the way to get the outcome, not the headline. The page makes clear there's nothing to set up: no sign-up, no card, no repo.</dd>
+          <dt>Agent instructions off the human page</dt>
+          <dd>Today the full agent instructions sit on the homepage. In this concept they'd move to a page only for agents, so people see the pitch and agents still get the steps.</dd>
+          <dt>Only real facts</dt>
+          <dd>Every feature and price here comes from answer.cloud's current site. There are no testimonials, stats or new claims.</dd>
+        </dl>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container footer-inner">
-      <a href="#" class="logo small">
-        <svg width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><use href="#mark"/></svg>
-        <span>answer<span class="dot">.cloud</span></span>
-      </a>
-      <p>&copy; <span id="year"></span> answer.cloud. All rights reserved.</p>
+      <p><strong>Unofficial concept</strong> by Helen Peatfield, conversion copywriter. Not made by, endorsed by or affiliated with answer.cloud.</p>
+      <a href="https://www.answer.cloud/" rel="noopener">The real answer.cloud ↗</a>
     </div>
   </footer>
 
-  <!-- Logo mark: cloud with a speech tail -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <defs>
-      <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#7c9cff"/>
-        <stop offset="1" stop-color="#36e0c4"/>
-      </linearGradient>
-      <symbol id="mark" viewBox="0 0 32 32">
-        <path fill="url(#g)" d="M9 24h14a6 6 0 0 0 .9-11.93A8 8 0 0 0 8.4 13.1 5.5 5.5 0 0 0 9 24Zm2 0-3 5 7-5Z"/>
-        <path fill="none" stroke="#0b1020" stroke-width="1.8" stroke-linecap="round" d="M13.6 15.4a2.4 2.4 0 1 1 3.4 2.2c-.7.3-1 .8-1 1.5"/>
-        <circle cx="16" cy="21.4" r="1" fill="#0b1020"/>
-      </symbol>
-    </defs>
-  </svg>
-
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="script.js"></script>
 </body>
 </html>
